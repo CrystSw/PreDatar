@@ -36,10 +36,11 @@ class AccessControlHTTPRequestHandler(Handler):
 	# CGIディレクトリの変更
 	cgi_directories = ['/analysis/script']
 	
-	def checkAccess(self):
+	def existPath(self):
 		# ファイルが存在するか
-		if os.path.exists('./'+self.path[1:]) == False:
-			return True
+		return os.path.exists('./'+self.path[1:])
+	
+	def checkAccess(self):
 		# アクセスルールを検証する
 		for delem in deny:
 			# 禁止リストに登録されているか
@@ -55,16 +56,18 @@ class AccessControlHTTPRequestHandler(Handler):
 		return True
 	
 	def do_GET(self):
-		if self.checkAccess() == True:
-			super(AccessControlHTTPRequestHandler, self).do_GET()
-		else:
-			self.send_error(403, "You don't have permission to access")
-	
+		if self.existPath() == False:
+			self.send_error(404)
+		if self.checkAccess() == False:
+			self.send_error(403)
+		super(AccessControlHTTPRequestHandler, self).do_GET()
+
 	def do_POST(self):
-		if self.checkAccess() == True:
-			super(AccessControlHTTPRequestHandler, self).do_POST()
-		else:
-			self.send_error(403, "You don't have permission to access")			
+		if self.existPath() == False:
+			self.send_error(404)
+		if self.checkAccess() == False:
+			self.send_error(403)
+		super(AccessControlHTTPRequestHandler, self).do_POST()
 
 # ------------------------
 # サーバ処理
