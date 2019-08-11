@@ -52,9 +52,6 @@ class AccessControlHTTPRequestHandler(Handler):
 					else:
 						# 禁止リストに従い，アクセスを拒否する
 						return False
-			else:
-				# 禁止リストに登録されていないため，アクセスを許可する
-				return True
 		# 禁止リストに登録されていないため，アクセスを許可する
 		return True
 	
