@@ -49,9 +49,8 @@ class AccessControlHTTPRequestHandler(Handler):
 					if aelem.match(self.path) != None:
 						# 許可リスト優先に従い，アクセスを許可する
 						return True
-					else:
-						# 禁止リストに従い，アクセスを拒否する
-						return False
+				# 禁止リストに従い，アクセスを拒否する
+				return False
 		# 禁止リストに登録されていないため，アクセスを許可する
 		return True
 	
