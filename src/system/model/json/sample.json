@@ -1,43 +1,44 @@
 {
 	"modelInfo": {
 		"id": "0",
-		"createDate": "20190812-180000",
+		"createDate": "2019/08/12-18:00:00",
 		"method": "regression",
-		"baseData": {
-			"filename": "sample.csv",
-			"hash": "0123456789ABCDEF0123456789ABCDEF",
-			"vector": {
-				"number": 4,
-				"attribute": ["temp", "humid", "weather", "visitor"],
-				"detail": {
-					"temp": {
-						"type": "continuous"
-					},
-					"humid": {
-						"type": "continuous"
-					},
-					"weather": {
-						"type": "discrete",
-						"class": {
-							"number": 3,
-							"domain": ["sunny", "cloudy", "rain"],
-							"mapping": {
-								"sunny": "00",
-								"cloudy": "01",
-								"rain": "10"
-							}
-						}
-					},
-					"visitor": {
-						"type": "continuous"
-					}
-				}
-			},
-			"reservation": {}
-		},
 		"model": {
-			"input": ["temp", "humid", "weather"],
-			"output": ["visitor"],
+			"detail": {
+				"trainData": {
+					"filename": "sample.csv",
+					"hash": "0123456789ABCDEF0123456789ABCDEF"
+				},
+				"vector": {
+					"number": 4,
+					"attribute": ["temp", "humid", "weather", "visitor"],
+					"detail": {
+						"temp": {
+							"type": "continuous"
+						},
+						"humid": {
+							"type": "continuous"
+						},
+						"weather": {
+							"type": "discrete",
+							"class": {
+								"number": 3,
+								"domain": ["sunny", "cloudy", "rain"],
+								"mapping": {
+									"sunny": "00",
+									"cloudy": "01",
+									"rain": "10"
+								}
+							}
+						},
+						"visitor": {
+							"type": "continuous"
+						}
+					}
+				},
+				"input": ["temp", "humid", "weather"],
+				"output": ["visitor"]
+			},
 			"randomForest": {
 				"filename": "model1.mdl",
 				"hash": "0123456789ABCDEF0123456789ABCDEF"
@@ -49,9 +50,7 @@
 			"neuralNetwork": {
 				"filename": "model3.mdl",
 				"hash": "0123456789ABCDEF0123456789ABCDEF"
-			},
-			"reservation": {}
-		},
-		"reservation": {}
+			}
+		}
 	}
 }
