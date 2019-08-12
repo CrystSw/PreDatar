@@ -32,9 +32,9 @@
 						"type": "continuous"
 					}
 				}
-			}
+			},
 			"reservation": {}
-		}
+		},
 		"model": {
 			"input": ["temp", "humid", "weather"],
 			"output": ["visitor"],
@@ -49,7 +49,7 @@
 			"neuralNetwork": {
 				"filename": "model3.mdl",
 				"hash": "0123456789ABCDEF0123456789ABCDEF"
-			}
+			},
 			"reservation": {}
 		},
 		"reservation": {}
