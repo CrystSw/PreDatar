@@ -1,0 +1,57 @@
+{
+	"modelInfo": {
+		"id": "0",
+		"createDate": "20190812-180000",
+		"method": "regression",
+		"baseData": {
+			"filename": "sample.csv",
+			"hash": "0123456789ABCDEF0123456789ABCDEF",
+			"vector": {
+				"number": 4,
+				"attribute": ["temp", "humid", "weather", "visitor"],
+				"detail": {
+					"temp": {
+						"type": "continuous"
+					},
+					"humid": {
+						"type": "continuous"
+					},
+					"weather": {
+						"type": "discrete",
+						"class": {
+							"number": 3,
+							"domain": ["sunny", "cloudy", "rain"],
+							"mapping": {
+								"sunny": "00",
+								"cloudy": "01",
+								"rain": "10"
+							}
+						}
+					},
+					"visitor": {
+						"type": "continuous"
+					}
+				}
+			}
+			"reservation": {}
+		}
+		"model": {
+			"input": ["temp", "humid", "weather"],
+			"output": ["visitor"],
+			"randomForest": {
+				"filename": "model1.mdl",
+				"hash": "0123456789ABCDEF0123456789ABCDEF"
+			},
+			"linearRegression": {
+				"filename": "model2.mdl",
+				"hash": "0123456789ABCDEF0123456789ABCDEF"
+			},
+			"neuralNetwork": {
+				"filename": "model3.mdl",
+				"hash": "0123456789ABCDEF0123456789ABCDEF"
+			}
+			"reservation": {}
+		},
+		"reservation": {}
+	}
+}
