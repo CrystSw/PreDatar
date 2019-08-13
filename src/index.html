@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Predator</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" type="text/css" href="./web/resource/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./web/resource/font/css/open-iconic-bootstrap.min.css">
+		<script type="text/javascript" src="./web/resource/js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="./web/resource/js/bootstrap.bundle.min.js"></script>
+		<script>$('[data-toggle="tooltip"]').tooltip()</script>
+	</head>
+	<body>
+		<h1 class="bg-light text-muted">Predator<small>　ver.0.1dev</small></h1>
+		<ul class="nav nav-tabs">
+			<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#datalist">データリスト</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#modellist">モデルリスト</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting">設定</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane fade show active" id="datalist" role="tabpanel">
+				<div class="p-3 m-3 bg-light text-muted text-center">
+					<h2>データがありません</h2>
+					<p>csvファイルをここへドラッグ&ドロップして，データをアップロードしてみましょう．</p>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="modellist" role="tabpanel">
+				<div class="p-3 m-3 bg-light text-muted text-center">
+					<h2>データがありません</h2>
+					<p>アップロードしたデータファイルからモデルを作成してみましょう．</p>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="setting" role="tabpanel">
+				<div class="p-1 m-3">
+					<h3 role="presentation">◎一般</h3>
+					<small>基本設定を行います．</small>
+				</div>
+				<hr/>
+				<div class="p-1 m-3">
+					<h3 role="presentation">◎パラメータチューニング</h3>
+					<small>
+						モデルのハイパーパラメータの調整を手動で行います．設定次第ではさらに改善する場合があります．(悪化する場合もあります)
+					</small>
+					<strong></strong>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
