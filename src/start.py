@@ -26,8 +26,7 @@ Handler = http.server.CGIHTTPRequestHandler
 dregex1 = re.compile('^/(\w+)\.py$')
 deny = [dregex1]
 # アクセスを許可するファイル(優先度:高)
-aregex1 = re.compile('^/analysis/script/(\w+)\.py$')
-allow = [aregex1]
+allow = []
 
 # ------------------------
 # クラスの継承によるアクセス制御
