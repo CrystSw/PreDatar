@@ -8,7 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="./web/resource/font/css/open-iconic-bootstrap.min.css">
 		<script type="text/javascript" src="./web/resource/js/jquery-3.4.1.min.js"></script>
 		<script type="text/javascript" src="./web/resource/js/bootstrap.bundle.min.js"></script>
-		<script>$('[data-toggle="tooltip"]').tooltip()</script>
+		<script type="text/javascript" src="./web/resource/js/dropzone.js"></script>
+		<script>$('[data-toggle="tooltip"]').tooltip();</script>
 	</head>
 	<body>
 		<h1 class="bg-light text-muted">Predator<small>　ver.0.1dev</small></h1>
@@ -45,5 +46,6 @@
 				</div>
 			</div>
 		</div>
+		<script>$('div#datalist').dropzone({ url: "./system/upload.py" });</script>
 	</body>
 </html>

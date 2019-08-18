@@ -24,7 +24,9 @@ Handler = http.server.CGIHTTPRequestHandler
 # ------------------------
 # アクセスを禁止するファイル(優先度:低)
 dregex1 = re.compile('^/(\w+)\.py$')
-deny = [dregex1]
+dregex2 = re.compile('^/system/(\w+)\.json$')
+dregex3 = re.compile('^/system/config/(\w+)\.json$')
+deny = [dregex1,dregex2,dregex3]
 # アクセスを許可するファイル(優先度:高)
 allow = []
 
@@ -33,7 +35,7 @@ allow = []
 # ------------------------
 class AccessControlHTTPRequestHandler(Handler):
 	# CGIディレクトリの変更
-	cgi_directories = ['/analysis/script']
+	cgi_directories = ['/system']
 	
 	def existPath(self):
 		# ファイルが存在するか
@@ -71,6 +73,6 @@ class AccessControlHTTPRequestHandler(Handler):
 # ------------------------
 # サーバ処理
 # ------------------------
-with socketserver.ThreadingTCPServer(("", PORT), AccessControlHTTPRequestHandler) as httpd:
+with http.server.HTTPServer(("", PORT), AccessControlHTTPRequestHandler) as httpd:
 	print("serving at port", PORT)
 	httpd.serve_forever()
